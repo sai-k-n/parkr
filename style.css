@@ -10,6 +10,7 @@ html, body {
   margin:0;
   padding: 0;
   overflow-x: hidden;
+  color:#fff;
 }
 .light-text {
   font-weight: 300; /* Light version */
@@ -22,21 +23,11 @@ html, body {
 .bold-text {
   font-weight: 700; /* Bold version */
 }
-nav{
-  height: 100px;
-  background: #1E1E1E;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-}
 
 .logo{
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0rem;
-
 }
 
 .hero{
@@ -85,6 +76,8 @@ nav{
   cursor: pointer;
   border-radius: 50px;
   white-space: nowrap; /* Prevents button text from wrapping */
+  height: auto; /* Let the height adjust automatically */
+  width: auto;
 
 }
 
@@ -115,6 +108,7 @@ nav{
 .main h2{
   margin-bottom: 1rem;
   font-size: 2rem;
+  padding-bottom: 2rem;
 }
 
 .main p {
@@ -131,4 +125,144 @@ nav{
   margin-bottom: 1rem;
   font-size: 0.75rem;
   line-height: 1.5;
+}
+.listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.listing {
+  background-color: #1e1e1e;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  padding-bottom: 10%;
+}
+
+.listing img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 10px;
+}
+
+.info p {
+  margin: 5px 0;
+  font-weight: 300;
+}
+nav {
+  height: 100px;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: space-between; /* Ensure space between elements */
+  align-items: center;
+  padding: 0 5%; /* Add horizontal padding for spacing */
+  box-sizing: border-box; /* Include padding and borders in height */
+}
+
+nav .logo {
+  font-size: 1.5rem; /* Adjust logo size */
+  font-weight: bold;
+  color: #fff;
+  line-height: 1; /* Ensures consistent vertical alignment */
+  margin: 0; /* Removes default margins */
+}
+
+nav .post-rental {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  line-height: 1; /* Matches the button height with text */
+  height: auto; /* Ensures button height adjusts to text */
+  margin: 0; /* Removes extra margins */
+}
+
+nav .post-rental:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: nowrap; /* Stack items vertically */
+    padding-left: 5%; /* Add padding for spacing */
+  }
+
+  nav .post-rental {
+    width: 100%; /* Make button full-width */
+    text-align: right;
+  }
+}
+.contact {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: auto; /* Ensure the width adjusts to the text */
+  height: auto; /* Ensure the height adjusts to the text */
+}
+
+.contact:hover {
+  background: #fff;
+  color: #000;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  position: absolute; /* Take the container out of normal flow */
+  top: 50%; /* Move it 50% down the viewport */
+  left: 50%; /* Move it 50% from the left */
+  transform: translate(-50%, -50%); /* Offset the container by half its width and height */
+}
+/* Form Styles */
+.form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color:#fff;
+}
+
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color:#fff;
+  padding: 10px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888888;
 }
